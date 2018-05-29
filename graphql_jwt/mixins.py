@@ -64,5 +64,6 @@ class RefreshMixin(object):
         else:
             raise exceptions.GraphQLJWTError(_('orig_iat field is required'))
 
-        token = get_token(user, orig_iat=orig_iat)
+        refresh_exp = datetime.utcnow() + jwt_settings.JWT_REFRESH_TOKEN_EXPIRATION_DELTA
+        token = get_token(user, orig_iat=orig_iat, exp=refresh_exp)
         return cls(token=token, payload=payload)

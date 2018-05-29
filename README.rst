@@ -272,11 +272,17 @@ Here's a **list of settings** available in *Django-graphql-jwt* and their defaul
     Expiration time verification
     Default: False
 
-JWT_EXPIRATION_DELTA
+`JWT_EXPIRATION_DELTA`_
 
 ::
 
     Timedelta added to utcnow() to set the expiration time
+    Default: timedelta(minutes=5)
+
+`JWT_REFRESH_TOKEN_EXPIRATION_DELTA`_
+
+::
+    Timedelta added to utcnow() to set the expiration time for refresh token
     Default: timedelta(minutes=5)
 
 JWT_ALLOW_REFRESH

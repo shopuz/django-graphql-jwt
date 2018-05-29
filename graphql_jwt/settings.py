@@ -36,6 +36,10 @@ DEFAULTS = {
         'JWT_EXPIRATION_DELTA',
         timedelta(seconds=60 * 5)),
 
+    'JWT_REFRESH_TOKEN_EXPIRATION_DELTA': env.timedelta(
+        'JWT_EXPIRATION_DELTA',
+        timedelta(seconds=60 * 10)),
+
     'JWT_ALLOW_REFRESH': env.bool('JWT_ALLOW_REFRESH', True),
 
     'JWT_REFRESH_EXPIRATION_DELTA': env.timedelta(
